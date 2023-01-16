@@ -153,6 +153,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Account\beneficiary.aspx" />
+    <Content Include="Account\logo1.png" />
     <Content Include="Admin\AcceptDonations.aspx" />
     <Content Include="Admin\AcceptOrder.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
@@ -171,13 +172,13 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="ContactUs.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="Edit-Profile.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -200,8 +201,22 @@
     <Content Include="Admin\AdminDonations.aspx" />
     <Content Include="Admin\AdminOrders.aspx" />
     <Content Include="Donation-tree.aspx" />
-    <Content Include="Profile.aspx" />
+    <Content Include="imgs\2.png" />
+    <Content Include="imgs\3.png" />
+    <Content Include="imgs\1.png" />
+    <Content Include="logo1.png" />
+    <Content Include="imgs\pic.png" />
+    <Content Include="pic\green.png" />
+    <Content Include="pic\greentree.jpg" />
+    <Content Include="pic\logo.png" />
+    <Content Include="pic\palm.PNG" />
+    <Content Include="pic\wesam.png" />
+    <Content Include="pic\x.jpg" />
     <Content Include="singleDonation.aspx" />
+    <Content Include="edit.aspx" />
+    <Content Include="myProfile.aspx" />
+    <Content Include="help2.aspx" />
+    <Content Include="Admin\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="imgs\aerial-view-green-forest.jpg" />
     <Content Include="imgs\BACK.png" />
@@ -248,7 +263,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="home.css" />
-    <Content Include="user.css" />
+    <Content Include="user3.css" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -400,6 +415,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -407,24 +429,10 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Edit-Profile.aspx.cs">
-      <DependentUpon>Edit-Profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Edit-Profile.aspx.designer.cs">
-      <DependentUpon>Edit-Profile.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Profile.aspx.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Profile.aspx.designer.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Admin\RegectOrder.aspx.cs">
       <DependentUpon>RegectOrder.aspx</DependentUpon>
@@ -532,10 +540,30 @@
     <Compile Include="singleDonation.aspx.designer.cs">
       <DependentUpon>singleDonation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="edit.aspx.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="edit.aspx.designer.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="myProfile.aspx.cs">
+      <DependentUpon>myProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myProfile.aspx.designer.cs">
+      <DependentUpon>myProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="help2.aspx.cs">
+      <DependentUpon>help2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="help2.aspx.designer.cs">
+      <DependentUpon>help2.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="pic\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

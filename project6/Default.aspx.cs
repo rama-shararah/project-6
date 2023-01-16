@@ -17,15 +17,20 @@ namespace project6
 
         protected void btn1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("~/Account/Register.aspx");
         }
         protected void btn2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("~/Account/Register.aspx");
         }
         protected void btn3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("~/Account/Register.aspx");
         }
+        protected void btn4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Account/Register.aspx");
+        }
+
     }
 }

@@ -9,15 +9,15 @@
         }
 
         #divcon {
-            width: 100%;
+            width: 60%;
             background-color: black;
-            opacity: 0.5;
+            opacity: 0.7;
             color: white;
             font-size: 17px;
         }
 
             #divcon:hover {
-                opacity: 0.7;
+                opacity: 0.8;
             }
 
         .DropDownstyle {
@@ -25,13 +25,44 @@
             height: 30px;
             color: black;
         }
+
+        body {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .body-content {
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 51px;
+        }
+
+        @media only screen and (min-device-width: 0px) and (max-device-width: 480px) {
+
+
+            #divcon {
+                width: 80%;
+            }
+
+            body {
+                padding-top: 0px;
+                padding-bottom: 0px;
+            }
+
+            .body-content {
+                padding-left: 0px;
+                padding-right: 0px;
+                padding-top: 51px;
+            }
+        }
     </style>
-    <h2><%: Title %>.</h2>
+
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
-
-    <div id="divcon" class="form-horizontal">
+    <br />
+    <div id="divcon" class="form-horizontal container">
+        <h1 style="text-align: center;"><b><%: Title %></b></h1>
         <br />
         <h4>Create a new account</h4>
         <hr />
@@ -77,6 +108,7 @@
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Textphone"
                     CssClass="text-danger" ErrorMessage="The phone field is required." />
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="Textphone" ErrorMessage="Enter Phone Number" ForeColor="Red" ValidationExpression="\b(?&lt;!.)\d+(?!.)\b"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="Textphone" ErrorMessage="Enter your Jordanian phone number " ForeColor="Red" ValidationExpression="((079)|(078)|(077)){1}[0-9]{7}"></asp:RegularExpressionValidator>
             </div>
         </div>
         <div class="form-group">
@@ -87,13 +119,13 @@
                     <asp:ListItem>Amman</asp:ListItem>
                     <asp:ListItem>Alzarqa</asp:ListItem>
                     <asp:ListItem>AlMafraq</asp:ListItem>
-                    <asp:ListItem>Jarash</asp:ListItem>
-                    <asp:ListItem>Al Balqa'</asp:ListItem>
+                    <asp:ListItem>Jerash</asp:ListItem>
+                    <asp:ListItem>Al Balqa</asp:ListItem>
                     <asp:ListItem>Madaba</asp:ListItem>
                     <asp:ListItem>Al Karak</asp:ListItem>
                     <asp:ListItem>Al Tafilah</asp:ListItem>
-                    <asp:ListItem>Ma'an</asp:ListItem>
-                    <asp:ListItem>AlA'qabah</asp:ListItem>
+                    <asp:ListItem>Maan</asp:ListItem>
+                    <asp:ListItem>AlAqabah</asp:ListItem>
                     <asp:ListItem>Ajlun</asp:ListItem>
                 </asp:DropDownList>
                 <%--                <asp:TextBox runat="server" ID="Textcity" CssClass="form-control"  />--%>

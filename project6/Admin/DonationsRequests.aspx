@@ -1,11 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="DonationsRequests.aspx.cs" Inherits="project6.WebForm2" %>
+﻿<%@ Page Title="dashboard" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="DonationsRequests.aspx.cs" Inherits="project6.WebForm2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        #a2 {
+            background-color: #ECECEC;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h3 style="margin-left: 3%;">Donations Requests</h3>
     <div style="display: flex; justify-content: center; margin-top: 5%;">
         <div style="width: 95%;">
-            <asp:GridView class="table table-hover" ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="id_donation" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Horizontal">
+            <asp:GridView class="table table-hover" ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="id_donation" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Horizontal" OnRowDataBound="GridView1_RowDataBound">
                 <Columns>
                     <asp:BoundField DataField="id_donation" HeaderText="id_donation" InsertVisible="False" ReadOnly="True" SortExpression="id_donation" />
                     <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
@@ -15,7 +21,7 @@
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("img_donation") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Image ID="Image1" runat="server" Height="50px" ImageUrl='<%# Eval("img_donation") %>' Width="50px" />
+                            <asp:Image ID="Image1" runat="server" Height="50px" ImageUrl='<%# "~/pic/"+Eval("img_donation") %>' Width="50px" />
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:BoundField DataField="quantity_donation" HeaderText="quantity_donation" SortExpression="quantity_donation" />

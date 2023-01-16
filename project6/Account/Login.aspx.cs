@@ -27,35 +27,42 @@ namespace project6.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-            if (IsValid)
+
+            try
             {
-                // Validate the user password
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
 
-                // This doen't count login failures towards account lockout
-                // To enable password failures to trigger lockout, change to shouldLockout: true
-                var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
-
-                switch (result)
+                if (IsValid)
                 {
-                    case SignInStatus.Success:
-                        IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                        break;
-                    case SignInStatus.LockedOut:
-                        Response.Redirect("/Account/Lockout");
-                        break;
-                    case SignInStatus.RequiresVerification:
-                        Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}",
-                                                        Request.QueryString["ReturnUrl"],
-                                                        RememberMe.Checked),
-                                          true);
-                        break;
-                    case SignInStatus.Failure:
-                    default:
-                        FailureText.Text = "Invalid login attempt";
-                        ErrorMessage.Visible = true;
-                        break;
+                    // Validate the user password
+                    var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                    var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
+
+                    // This doen't count login failures towards account lockout
+                    // To enable password failures to trigger lockout, change to shouldLockout: true
+                    var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
+
+                    //switch (result)
+                    //{
+                    //    case SignInStatus.Success:
+                    //        IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                    //        break;
+                    //    case SignInStatus.LockedOut:
+                    //        Response.Redirect("/Account/Lockout");
+                    //        break;
+                    //    case SignInStatus.RequiresVerification:
+                    //        Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}",
+                    //                                        Request.QueryString["ReturnUrl"],
+                    //                                        RememberMe.Checked),
+                    //                          true);
+                    //        break;
+                    //    case SignInStatus.Failure:
+                    //    default:
+                    //        FailureText.Text = "Invalid login attempt";
+                    //        ErrorMessage.Visible = true;
+                    //        break;
+                    //}
+
+
                 }
                 var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
                 SqlConnection Con = new SqlConnection(connectionString);
@@ -70,30 +77,40 @@ namespace project6.Account
 
                 if (Int32.Parse(idrole) == 1)
                 {
-                    Response.Redirect("Statics-page.aspx");
+                    Response.Redirect("~/Admin/Statics-page.aspx");
+
 
                 }
                 else if (Int32.Parse(idrole) == 2)
                 {
 
-                    Session.Add("id_user", id);
-                    Response.Redirect("~/Default.aspx");
-
-
-                }
-                else if (Int32.Parse(idrole) == 3)
-                {
                     //Response.Redirect("beneficiary.aspx?id_donor=" + id);
                     Session.Add("id_donor", id);
                     Response.Redirect("beneficiary.aspx");
 
 
                 }
+                else if (Int32.Parse(idrole) == 3)
+                {
+                    Session.Add("id_user", id);
+                    if (Request.QueryString["single"] != null)
+                    {
+                        string donation_id = Request.QueryString["donation_id"];
+                        Session["donation"] = donation_id;
+                        Response.Redirect($"~/singleDonation.aspx?donation_id={donation_id}");
+                    }
+
+                    Response.Redirect("~/Default.aspx");
+
+                }
                 else
                 {
 
                 }
-
+            }
+            catch (Exception)
+            {
+                Response.Write("");
             }
         }
     }

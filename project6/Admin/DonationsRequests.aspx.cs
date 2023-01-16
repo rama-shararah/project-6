@@ -13,5 +13,19 @@ namespace project6
         {
 
         }
+
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.Header)
+            {
+
+                e.Row.Cells[0].Text = "ID";
+                e.Row.Cells[1].Text = "User Name";
+                e.Row.Cells[2].Text = "Donation Name";
+                e.Row.Cells[3].Text = "Photo";
+                e.Row.Cells[4].Text = "Quantity";
+                e.Row.Cells[5].Text = "Category";
+            }
+        }
     }
 }

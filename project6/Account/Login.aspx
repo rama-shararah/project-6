@@ -11,22 +11,71 @@
         }
 
         #divcon {
-            width: 100%;
+            width: 60%;
             background-color: black;
-            opacity: 0.5;
+            opacity: 0.7;
             color: white;
+            margin-left: 20%;
         }
 
+
+
             #divcon:hover {
-                opacity: 0.7;
+                opacity: 0.8;
             }
+
+        .row {
+            margin-right: 0px;
+            margin-left: 0px;
+            align-content: center;
+        }
+
+        body {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .body-content {
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 51px;
+        }
+
+        @media only screen and (min-device-width: 0px) and (max-device-width: 480px) {
+
+
+            #divcon {
+                width: 80%;
+                margin-left: 10%;
+            }
+        }
+
+        body {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .body-content {
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 51px;
+        }
+
+        }
     </style>
-    <h2><%: Title %>.</h2>
+
 
     <div class="row">
+        <br />
+        <br />
+
         <div id="divcon" class="col-md-8">
             <section id="loginForm">
+
                 <div class="form-horizontal">
+                    <br />
+                    <h1 style="text-align: center;"><b><%: Title %></b></h1>
+                    <br />
                     <h4>Use a local account to log in.</h4>
                     <hr />
                     <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
@@ -52,7 +101,7 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <div class="checkbox">
-                                <asp:CheckBox runat="server" ID="RememberMe" />
+                                <asp:CheckBox runat="server" ID="RememberMe" Style="margin-left: 0px;" />
                                 <asp:Label runat="server" AssociatedControlID="RememberMe">Remember me?</asp:Label>
                             </div>
                         </div>

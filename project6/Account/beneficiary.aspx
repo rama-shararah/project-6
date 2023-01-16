@@ -1,16 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="beneficiary.aspx.cs" Inherits="project6.Account.WebForm1" %>
+﻿<%@ Page Title="Donation form" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="beneficiary.aspx.cs" Inherits="project6.Account.WebForm1" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <style>
         .tablecon {
             margin-top: 30px;
-            width: 90%;
+            width: 80%;
             font-size: 20px;
             background-color: black;
             opacity: 0.5;
             color: white;
             border-collapse: separate;
             border-spacing: 0 1em;
+            margin-left: 10%;
+            padding-left: 40px;
         }
 
         body {
@@ -21,11 +23,10 @@
 
         tdd {
             width: 50%;
-            padding-left: 40px;
         }
 
         .infoo {
-            width: 90%;
+            width: 100%;
             text-align: center;
             font-size: 35px;
             margin-top: 30px;
@@ -41,20 +42,20 @@
     <table class="tablecon ">
         <tr>
             <td class="tdd">
-                <asp:Label ID="txtname" runat="server" Text="Tree name"></asp:Label></td>
+                <asp:Label ID="txtname" runat="server" Text="Name"></asp:Label></td>
             <td style="color: black" class="tdd">
                 <asp:TextBox ID="Pname" runat="server" required="required"></asp:TextBox></td>
         </tr>
 
         <tr>
             <td class="tdd">
-                <asp:Label ID="txtdes" runat="server" Text="Tree description"></asp:Label></td>
+                <asp:Label ID="txtdes" runat="server" Text="Description"></asp:Label></td>
             <td style="color: black" class="tdd">
                 <asp:TextBox ID="Pdesc" runat="server" required="required"></asp:TextBox></td>
         </tr>
         <tr>
             <td class="tdd">
-                <asp:Label ID="txtquant" runat="server" Text="quantity"></asp:Label>
+                <asp:Label ID="txtquant" runat="server" Text="Quantity"></asp:Label>
             </td>
             <td style="color: black" class="tdd">
                 <asp:TextBox ID="Pprice" runat="server" required="required"></asp:TextBox>
@@ -64,7 +65,7 @@
 
         <tr>
             <td class="tdd">
-                <asp:Label ID="Label1" runat="server" Text="category"></asp:Label></td>
+                <asp:Label ID="Label1" runat="server" Text="Category"></asp:Label></td>
             <td style="color: black" class="tdd">
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [id_category], [name_category] FROM [category]"></asp:SqlDataSource>
                 <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="name_category" DataValueField="id_category">
@@ -73,9 +74,9 @@
         </tr>
         <tr>
             <td class="tdd">
-                <asp:Label ID="Label7" runat="server" Text="Tree image"></asp:Label></td>
+                <asp:Label ID="Label7" runat="server" Text="Image"></asp:Label></td>
             <td style="color: black" class="tdd">
-                <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black" />
+                <asp:FileUpload ID="FileUpload1" runat="server" ForeColor="Black" accept=".png,.jpg,.jpeg,.gif,.jfif" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required image" ControlToValidate="FileUpload1" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>

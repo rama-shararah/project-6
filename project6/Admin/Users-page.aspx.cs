@@ -13,5 +13,20 @@ namespace project6
         {
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            GridView1.Visible = false;
+            GridView2.Visible = true;
+            Button3.Visible = true;
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            GridView1.Visible = true;
+            GridView2.Visible = false;
+            Button3.Visible = false;
+
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -18,7 +19,7 @@ namespace project6.Account
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string id_doner = Request.QueryString["id_donor"].ToString();
+            string id_doner = Convert.ToString(Session["id_donor"]);
 
             if (!Directory.Exists(Server.MapPath("~/pic/")))
             {
@@ -37,9 +38,8 @@ namespace project6.Account
             string id = getId.ExecuteScalar().ToString();
 
             Con.Close();
-            string message = " Donation Complete!";
-            string script = "alert('" + message + "');";
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "k", "swal('successfull', 'Thank you for Donation', 'success')", true);
+
             //Response.Redirect("homepage.aspx");
         }
     }

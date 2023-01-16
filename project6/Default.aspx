@@ -11,6 +11,15 @@
              box-shadow: 10px 10px 5px #aaaaaa;
          }
 
+         #BodyContent {
+             padding-left: 0px;
+             padding-right: 0px;
+         }
+
+         .carousel-caption {
+             top: 245px;
+         }
+
          .box1 {
              color: #1A4D2E;
          }
@@ -91,7 +100,7 @@ a {
              font-size: 15px;
              font-weight: 600;
              letter-spacing: 2px;
-             background-color: #212121;
+             background-color: #0F3721;
              transition: all 0.5s;
              border: none;
          }
@@ -164,15 +173,15 @@ a {
          .buttontt {
              padding: 0.7rem 1.5rem;
              border: 1px solid #4361ee;
-             background-color: #4361ee;
+             background-color: #1A4D2E;
              color: #fff;
              border-radius: 5px;
              cursor: pointer;
          }
 
          .submitbtn {
-             border: 1px solid #0e9594;
-             background-color: #0e9594;
+             border: 1px solid #FF9F29;
+             background-color: #FF9F29;
          }
 
          .mtt {
@@ -184,9 +193,10 @@ a {
          }
 
          .form-step {
-             border: 1px solid rgba(0, 0, 0, 0.1);
+             border: 1px solid #FF9F29;
              border-radius: 20px;
              padding: 3rem;
+             text-align: center;
          }
 
          .font-normal {
@@ -279,12 +289,12 @@ a {
          }
 
          .form-stepper .form-stepper-active .form-stepper-circle {
-             background-color: #4361ee !important;
+             background-color: #FF9F29 !important;
              color: #fff;
          }
 
          .form-stepper .form-stepper-active .labeltt {
-             color: #4361ee !important;
+             color: #FF9F29 !important;
          }
 
          .form-stepper .form-stepper-active .form-stepper-circle:hover {
@@ -297,7 +307,7 @@ a {
          }
 
          .form-stepper .form-stepper-completed .form-stepper-circle {
-             background-color: #0e9594 !important;
+             background-color: #1A4D2E !important;
              color: #fff;
          }
 
@@ -327,10 +337,86 @@ a {
              cursor: default;
          }
 
-         .backk {
+         /*    .backk {
              background-image: url(/imgs/BACK.png);
-             background-size: cover;
+             background-size: 500px;
+         }*/
+         .animate-charcter {
+             background-image: linear-gradient( -225deg, rgba(0, 0, 0, 0.1) 0%, #1A4D2E 29%, #FAC710 67%, #1A4D2E 100% );
+             background-size: auto auto;
+             background-clip: border-box;
+             background-size: 200% auto;
+             color: #fff;
+             background-clip: text;
+             text-fill-color: transparent;
+             -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;
+             animation: textclip 5s linear infinite;
+             display: inline-block;
+             font-weight: 900;
+             font-size: 33px;
          }
+
+         @keyframes textclip {
+             to {
+                 background-position: 200% center;
+             }
+         }
+
+         @media only screen and (min-device-width: 0px) and (max-device-width: 480px) {
+             .donation-cat {
+                 width: 200px;
+             }
+
+             .carousel-caption {
+                 top: 25px;
+             }
+
+             h2 {
+                 font-size: 10px;
+             }
+
+             .head-btn {
+                 height: 30px;
+                 width: 60px;
+                 font-size: 10px;
+             }
+
+             body {
+                 padding-top: 0px;
+                 padding-bottom: 0px;
+             }
+
+             .body-content {
+                 padding-left: 0px;
+                 padding-right: 0px;
+                 padding-top: 51px;
+             }
+
+             .animate-charcter {
+                 font-size: 22px;
+             }
+
+             .iconn {
+                 font-size: 26px;
+             }
+         }
+
+         @media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
+             .donation-cat {
+                 width: 300px;
+             }
+
+             .carousel-caption {
+                 top: 95px;
+             }
+
+             h2 {
+                 font-size: 20px;
+             }
+         }
+         /*------------------------------------------------------------
+*/
      </style>
 <div>
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -344,30 +430,37 @@ a {
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="/imgs/firstslide.jpg">
+        <img src="/imgs/1.png">
               <div class="carousel-caption">
-     <h2 class="backk box1" >“The best time to plant a tree was 20 years ago. The second best time is now.”
- – Chinese proverb</h2> <br /> <button id="btn1" class="head-btn" runat="server" OnClick="btn1_Click">Donate Now</button> <button class="head-btn">Plant A Tree</button></div> 
+     <h2>“We are helping to make the world better, greener, healthier, and livable place again; by providing a platform that contributes to helping those interested in agriculture.”</h2> <br />
+                 <asp:Button ID="btn1" class="head-btn" OnClick="btn1_Click" runat="server" Text="Donate Now" />&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button2" class="head-btn" OnClick="btn1_Click" runat="server" Text="Benefit Now" /></div>
 
 
       </div>
 
+  
+
+
+
       <div class="item">
-        <img src="/imgs/secslide.jpg">
+        <img src="/imgs/2.png">
         <div class="carousel-caption">
-        <h2 class="backk box1">“The best time to plant a tree was 20 years ago. The second best time is now.”</h2><br /><button id="btn2" class="head-btn" runat="server" OnClick="btn2_Click" >Donate Now</button> <button class="head-btn">Plant A Tree</button></div> 
+        <h2>“We are helping to make the world better, greener, healthier, and livable place again; by providing a platform that contributes to helping those interested in agriculture.”</h2><br />
+            <asp:Button ID="Button3" class="head-btn" OnClick="btn1_Click" runat="server" Text="Donate Now" />&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button4" class="head-btn" OnClick="btn1_Click" runat="server" Text="Benefit Now" /></div>
 
         
       </div>
 
       <div class="item">
-        <img src="/imgs/slide.jpg">
+        <img src="/imgs/3.png">
      <div class="carousel-caption">
-        <h2 class="backk box1">“The best time to plant a tree was 20 years ago. The second best time is now.”
- – Chinese proverb</h2><br /><button id="btn3" class="head-btn" runat="server" OnClick="btn3_Click">Donate Now</button> <button class="head-btn">Plant A Tree</button></div> 
-
+         <div>
+        <h2>“We are helping to make the world better, greener, healthier, and livable place again; by providing a platform that contributes to helping those interested in agriculture.”</h2> <br />
+     <asp:Button ID="Button5" class="head-btn" OnClick="btn1_Click" runat="server" Text="Donate Now" />&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="Button6" class="head-btn" OnClick="btn1_Click" runat="server" Text="Benefit Now" /></div>
+         </div>
       </div>
     </div>
+
 
     <!-- Controls -->
     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -383,29 +476,38 @@ a {
 </div>
  
   
-    <h1><b class="box1">What We Collect</b></h1>   
+    <h1><b class="box1">          <div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3 class="animate-charcter">What We Collect</h3>
+    </div>
+  </div>
+</div></b></h1>   
     <hr />
     <br />
     <br />
        <div style="display:flex; flex-wrap:wrap; justify-content:space-around; text-align:center;  ">
 
       <div class="box1">
-                <div class="iconn"><i class="fa fa-pagelines" aria-hidden="true"><br /><b class="collect">seeds</b></i>
+                <div class="iconn"><i class="fa fa-pagelines" aria-hidden="true"><br /><b class="collect">Seeds</b></i>
 </div>
-                <div ><p style="text-align:center;">Seeds are everywhere in the world</p><p>They allow trees to grow, </p><p>plants to produce fruit,</p><p>and even give much needed shade when it is too hot </p>
+                <div ><p style="text-align:center;"> Seeds are everywhere in the world.</p><p> They allow trees to grow,  plants to</p> <p> produce fruit, and even give much needed</p><p> shade when it is too hot outside,</p><p> and it is easy to Plant and growing</p><p> and They are diverse and can be grown in </p><p>various environments and terrains.</p>
+
                     <p></p>
                 </div>
             </div>
                <div class="box1">
-                <div class="iconn"><i class="fa fa-tree" aria-hidden="true"><br /><b class="collect">trees</b></i>
+                <div class="iconn"><i class="fa fa-tree" aria-hidden="true"><br /><b class="collect">Trees</b></i>
 </div>
-                <div ><p style="text-align:center;">woody plant that regularly renews its growth (perennial),</p><p> Most plants classified as trees have a single </p><p>self-supporting trunk containing woody tissues,</p><p> and in most species the trunk produces secondary limbs, called branches.</p>
+                <div ><p style="text-align:center;">      Tree, woody plant that regularly </p><p> renews its growth (perennial).</p><p> Most plants classified as trees have a single </p><p>self-supporting trunk containing woody tissues,</p><p> and in most species the trunk</p><p> produces secondary limbs, called branches, </p><p>The best time to plant trees is now</p>
+
                     <p></p>
                 </div>
             </div>
       <div class="box1">
-                <div class="iconn"><i class="fa fa-leaf" aria-hidden="true"><br /><b class="collect">seedlings</b></i></div>
-                <div ><p style="text-align:center;">A seedling is a young sporophyte especially </p><p> one that develops from an embryo from a seed.</p><p> </p><p>Seedlings emerge from seed that germinates. </p><p> Germination is the process that leads to the sprouting of a seedling</p>
+                <div class="iconn"><i class="fa fa-leaf" aria-hidden="true"><br /><b class="collect">Seedlings</b></i></div>
+                <div ><p style="text-align:center;"> A seedling is a young sporophyte </p><p>especially one that develops from</p><p> an embryo from a seed. Seedlings emerge</p><p> from seed that germinates. </p><p>Germination is the process that leads</p><p> to the sprouting of a seedling</p><p> from a seed of a spermatophyte,</p>
+
                     <p></p>
                 </div>
             </div>
@@ -414,32 +516,40 @@ a {
     <br />
     <br />
 
-<h1 class="box1"><b>Let's plant together!</b></h1>    
+ 
+      
+    <h1><b class="box1">          <div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+    <h3 class="animate-charcter" id="beeee">Benefit Now</h3>
+    </div>
+  </div>
+</div></b></h1>   
    <br />
     <br />
      <div style="display:flex; flex-wrap:wrap; justify-content:space-around; text-align:center;  ">
     <div class="box">
              <a href="Donation-tree.aspx?category_id=3" class="underline">    <div><img class="donation-cat"" alt="" src="/imgs/cat3.jpg"/></div>
-                <div ><h2 class="single-cat">Seeds</h2>
+                <div ><br /><h2 class="single-cat"><b>Seeds</b></h2>
                     <p></p>
                 </div></a>
             </div>
       <div class="box">
              <a href="Donation-tree.aspx?category_id=1" class="underline">    <div><img class="donation-cat"" alt="" src="/imgs/cat1.jpg"/></div>
-                <div ><h2 class="single-cat">Trees</h2>
+                <div ><br /><h2 class="single-cat"><b>Trees</b></h2>
                     <p></p>
                 </div></a>
             </div>
       <div class="box">
                <a href="Donation-tree.aspx?category_id=2" class="underline"> <div><img class="donation-cat"" alt="" src="/imgs/cat2.jpg"/></div>
-                <div ><h2 class="single-cat">Seedlings</h2>
+                <div ><br /><h2 class="single-cat"><b>Seedlings</b></h2>
                     <p></p>
                 </div></a>
             </div>
          </div>
       
 
-      <div class="cont2">
+<%--      <div class="cont2">
         <div class="aboutphoto2"></div>
         <div class="textplace1">
         <h2><b>Our aims</b></h2>
@@ -450,12 +560,22 @@ a {
            <p>-To encourage, inspire and persuade people of all ages and backgrounds to value and love trees.</p>
      
         </div>
-       </div>
-
+       </div>--%>
+    <br />
+    <br />
     <span></span>
     <br />
        <div class="container" style="align-items:center;">
-    <h1 class="box1"><b>Process of donation step By step</b></h1>
+            <h1><b class="box1">          <div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3 class="animate-charcter">Process of donation step By step</h3>
+    </div>
+  </div>
+</div></b></h1>  
+
+
+
     <div id="multi-step-form-container">
         <!-- Form Steps / Progress Bar -->
         <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
@@ -494,7 +614,7 @@ a {
                 <h2 class="font-normal">Login</h2>
                 <!-- Step 1 input fields -->
                 <div class="mtt">
-                       Login If You Have An Account, If you Don't Have One <a>Register Now</a>
+                       Login If You Have An Account, If you Don't Have One <a runat="server" href="~/Account/Register">Register Now</a>
                 </div>
                 <div class="mtt">
                     <button class="buttontt btn-navigate-form-step" type="button" step_number="2">Next</button>
@@ -505,7 +625,7 @@ a {
                 <h2 class="font-normal">Donation Form</h2>
                 <!-- Step 2 input fields -->
                 <div class="mtt">
-                      Fill This Form To Describe Your Donation Detials <a>Our Form</a>
+                      Fill This Form To Describe Your Donation Detials <a runat="server" href="~/Account/Register">Our Form</a>
                 </div>
                 <div class="mtt">
                     <button class="buttontt btn-navigate-form-step" type="button" step_number="1">Prev</button>
@@ -521,13 +641,20 @@ a {
                 </div>
                 <div class="mtt">
                     <button class="buttontt btn-navigate-form-step" type="button" step_number="2">Prev</button>
-                    <button class="buttontt submitbtn" type="submit">Donate Now </button>
+
+                    <asp:Button class="buttontt submitbtn" OnClick="btn4_Click" ID="Button1" runat="server" Text="Donate Now"/>
                 </div>
             </section>
         </form>
     </div>
 </div>
     <br />
+
+    
+  
+  
+
+
     <script> 
         const navigateToFormStep = (stepNumber) => {
             /**
@@ -596,7 +723,14 @@ a {
                  */
                 navigateToFormStep(stepNumber);
             });
-        });</script>
+        });
+
+
+        /*-----------------*/
+
+
+    </script>
+
 
 
 

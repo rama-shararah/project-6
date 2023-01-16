@@ -26,18 +26,25 @@ namespace project6
                 //string user_id = "22f240fd-a834-421a-9197-95a7088c5936";
                 //string category_id = "1";
                 string quantity = county.Value;
+                Session["quantity"] = quantity;
                 SqlConnection connection = new SqlConnection("data source =  DESKTOP-KG1IER4\\SQLEXPRESS; database = project6 ; integrated security=SSPI");
                 connection.Open();
                 SqlCommand newtree = new SqlCommand($"insert INTO orders (id_user,id_donation,id_category,quantity) VALUES('{user_id}','{donation_id}','{category_id}','{quantity}')", connection);
                 newtree.ExecuteNonQuery();
                 connection.Close();
-                string message = " your request is on progress!";
-                string script = "alert('" + message + "');";
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
+                //string message = " your request is on progress!";
+                //string script = "alert('" + message + "');";
+                //Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", script, true);
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "Popup", $"pass('' ,'Please log in first');", true);
+
+
+
             }
             else
             {
-                Response.Redirect("~/Account/Register.aspx");
+                string donation_id = Request.QueryString["donation_id"];
+                Response.Redirect($"~/Account/Login.aspx?single=1&donation_id={donation_id}");
             }
 
 

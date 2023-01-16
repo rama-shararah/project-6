@@ -34,15 +34,20 @@ namespace project6
             double seedPercent = (seed / total) * 100;
 
 
+            double treeRound = Math.Round(treePercent, 1);
+            double lingsRound = Math.Round(seedlingPercent, 1);
+            double seedRound = Math.Round(seedPercent, 1);
+
+
             percent1.Attributes.Add("stroke-dasharray", $"{treePercent}, 100");
-            firstPercent.InnerText = Convert.ToString(treePercent) + "%";
+            firstPercent.InnerText = Convert.ToString(treeRound) + "%";
 
 
             percent2.Attributes.Add("stroke-dasharray", $"{seedlingPercent}, 100");
-            secPercent.InnerText = Convert.ToString(seedlingPercent) + "%";
+            secPercent.InnerText = Convert.ToString(lingsRound) + "%";
 
             percent3.Attributes.Add("stroke-dasharray", $"{seedPercent}, 100");
-            thirdPercent.InnerText = Convert.ToString(seedPercent) + "%";
+            thirdPercent.InnerText = Convert.ToString(seedRound) + "%";
 
 
             Label1.Text = Convert.ToString(total);
